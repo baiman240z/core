@@ -1,0 +1,8 @@
+{
+  "driver": "redis",
+  "name": "coresession",
+  "redis" : {
+    "host" : "localhost",
+    "port" : 6379
+  }
+}

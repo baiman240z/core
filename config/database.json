@@ -1,0 +1,22 @@
+{
+  "default": {
+    "driver": "pdo",
+    "dsn": "pgsql:host=localhost;dbname=sandbox;port=5432",
+    "user": "www",
+    "password": "h0geh0ge"
+  },
+  "mysqli": {
+    "driver": "mysqli",
+    "dbname": "sandbox",
+    "host": "sandbox.local",
+    "user": "www",
+    "password": "h0geh0ge",
+    "charset": "utf8"
+  },
+  "pdo": {
+    "driver": "pdo",
+    "dsn": "mysql:host=sandbox.local;dbname=sandbox;charset=utf8",
+    "user": "www",
+    "password": "h0geh0ge"
+  }
+}

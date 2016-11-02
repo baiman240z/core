@@ -1,0 +1,10 @@
+{
+  "encrypt" : {
+    "key" : "fdb583d3697d6937f57fa667915207ec8f817f08815126e80e3d5e261839c3b4",
+	   "iv" : "9b4c99239eed80af"
+  },
+  "smtp" : {
+    "host" : "localhost",
+    "port" : 25
+  }
+}
