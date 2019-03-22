@@ -12,7 +12,7 @@ if (Request::isGet()) {
         ->send(Request::post('receiptto'))
         ->disconnect()
     ;
-    Util::setMessage('送信しました');
+    Util::setMessage('success', '送信しました');
 }
 
 include 'views/email/mailer.php';

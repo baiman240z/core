@@ -18,7 +18,8 @@ use core\Request;
 
 <h1>Mailer</h1>
 
-<?php echo htmlspecialchars(Util::showMessage('views/parts/message.php')) ?>
+    <?php echo Util::showMessage('error') ?>
+    <?php echo Util::showMessage('success') ?>
 
 <div class="panel panel-primary">
 <div class="panel-body">
