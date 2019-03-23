@@ -15,7 +15,8 @@ use core\Util;
 
     <h1>Top</h1>
 
-    <?php echo htmlspecialchars(Util::showMessage('views/parts/message.php')) ?>
+    <?php echo Util::showMessage('error') ?>
+    <?php echo Util::showMessage('success') ?>
 
 </div>
 

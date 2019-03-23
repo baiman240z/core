@@ -1,11 +1,13 @@
 <?php
+
 use core\Util;
 use core\Request;
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<?php include 'views/parts/head.php' ?>
+    <?php include 'views/parts/head.php' ?>
 </head>
 
 <body>
@@ -14,44 +16,40 @@ use core\Request;
 
 <div class="container">
 
-<h1>Save form</h1>
+    <h1>Save form</h1>
 
-<form method="post" action="" class="form-horizontal" role="form">
+    <form method="post" action="" role="form">
 
-<?php echo htmlspecialchars(Util::showMessage('views/parts/message.php')) ?>
+        <?php echo htmlspecialchars(Util::showMessage('views/parts/message.php')) ?>
 
-<div class="panel panel-primary">
-<div class="panel-body">
+        <div class="card">
+            <div class="card-body">
 
-    <?php if (Request::get('id')) { ?>
-    <div class="form-group">
-        <label for="enc" class="col-sm-2 control-label">id</label>
-        <div class="col-sm-10">
-            <?php echo htmlspecialchars($form['hoge_id']) ?>
+                <?php if (Request::get('id')) { ?>
+                    <div class="form-group">
+                        <label for="enc">id</label>
+                        <input type="text" class="form-control" value="<?php echo htmlspecialchars($form['hoge_id']) ?>"
+                               readonly>
+                    </div>
+                <?php } ?>
+
+                <div class="form-group">
+                    <label for="title">title</label>
+                    <input type="text" class="form-control" name="title" placeholder="title"
+                           value="<?php echo htmlspecialchars($form['title']) ?>">
+                </div>
+                <div class="form-group">
+                    <label for="body">body</label>
+                    <textarea class="form-control" rows="5" name="body"
+                              placeholder="body"><?php echo htmlspecialchars($form['body']) ?></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-sm btn-primary">save</button>
+                </div>
+            </div>
         </div>
-    </div>
-    <?php } ?>
 
-    <div class="form-group">
-        <label for="title" class="col-sm-2 control-label">title</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="title" placeholder="title" value="<?php echo htmlspecialchars($form['title']) ?>">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="body" class="col-sm-2 control-label">body</label>
-        <div class="col-sm-10">
-            <textarea class="form-control" rows="5" name="body" placeholder="body"><?php echo htmlspecialchars($form['body']) ?></textarea>
-        </div>
-    </div>
-    <div class="form-group text-center">
-        <button type="submit" class="btn btn-sm btn-primary">save</button>
-    </div>
-
-</div>
-</div>
-
-</form>
+    </form>
 
 </div>
 

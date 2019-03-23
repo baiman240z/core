@@ -19,31 +19,39 @@ use core\Request;
     <?php echo Util::showMessage('error') ?>
     <?php echo Util::showMessage('success') ?>
 
-<form method="post" action="" class="form-inline" role="form">
-    <div class="panel panel-default">
-        <div class="panel-heading">cache</div>
-        <div class="panel-body">
-            <label for="key" class="control-label">key:</label>
-            <input type="text" class="form-control" name="key" value="<?php echo htmlspecialchars(Request::post('key')) ?>" size="10">
-            <label for="value" class="control-label">value:</label>
-            <input type="text" class="form-control" name="value" value="<?php echo htmlspecialchars(Request::post('value')) ?>" size="20">
-            <label for="ttl" class="control-label">ttl:</label>
-            <input type="text" class="form-control" name="ttl" value="<?php echo htmlspecialchars(Request::post('ttl')) ?>" size="10">
-            <button type="submit" class="btn btn-sm btn-primary">save</button>
+<form method="post" action="" role="form">
+    <div class="card">
+        <div class="card-header">cache</div>
+        <div class="card-body row">
+            <div class="form-group col-md-4">
+                <label for="key">key</label>
+                <input type="text" class="form-control" name="key" value="<?php echo htmlspecialchars(Request::post('key')) ?>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="key">value</label>
+                <input type="text" class="form-control" name="value" value="<?php echo htmlspecialchars(Request::post('value')) ?>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="key">ttl</label>
+                <input type="text" class="form-control" name="ttl" value="<?php echo htmlspecialchars(Request::post('ttl')) ?>">
+            </div>
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-sm btn-primary">save</button>
+            </div>
         </div>
     </div>
 </form>
 
-<form id="delete-form" method="post" action="delete" class="form-inline" role="form">
+<form id="delete-form" method="post" action="delete" role="form">
     <input type="hidden" name="key" value="">
-    <div class="panel panel-default">
-        <div class="panel-heading">cached</div>
-        <div class="panel-body">
+    <div class="card mt-5">
+        <div class="card-header">cached</div>
+        <div class="card-body">
             <ul class="list-group">
                 <?php foreach ($caches as $key => $cache) { ?>
                 <li class="list-group-item" data-key="<?php echo htmlspecialchars($key) ?>">
                         <button type="button" class="btn btn-sm btn-danger" name="delete-btn">
-                            <span class="glyphicon glyphicon-trash"></span>
+                            <i class="far fa-trash-alt"></i>
                         </button>
                         <?php echo htmlspecialchars($key) ?>
                         :

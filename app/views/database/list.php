@@ -14,8 +14,6 @@ use core\Request;
 
 <div class="container">
 
-<form method="post" action="" class="form-horizontal" role="form">
-
     <h1>
         List &amp; Pagination
         <a class="btn btn-sm btn-success" href="form">add</a>

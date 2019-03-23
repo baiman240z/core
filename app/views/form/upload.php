@@ -10,47 +10,57 @@
 <div class="container">
     <h1>File upload</h1>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Select</div>
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-header">Select</div>
+        <div class="card-body">
             <form method="post" enctype="multipart/form-data" action="">
-                <input type="file" name="file" class="hide">
-                <div class="row text-center">
+                <input type="file" name="file" hidden>
+                <div class="center">
                     <span id="filename" class="text-info"></span>
-                    <button type="button" class="btn btn-default btn-sm" name="file-btn"><i class="glyphicon glyphicon-file icon-white"></i> File</button>
-                    <button type="submit" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-upload icon-white"></i> upload</button>
+                    <button type="button" class="btn btn-info btn-sm" name="file-btn"><i class="far fa-file"></i> File</button>
+                    <button type="submit" class="btn btn-primary btn-sm ml-3"><i class="fas fa-upload"></i> upload</button>
                 </div>
             </form>
         </div>
     </div>
 
     <?php if (isset($file)) { ?>
-        <div class="panel panel-default">
-            <div class="panel-heading">File</div>
-            <div class="panel-body">
+        <div class="card mt-5">
+            <div class="card-header">File</div>
+            <div class="card-body">
                 <div class="row">
                     <div class="form-group col-md-8">
                         <div class="input-group">
-                            <div class="input-group-addon">Name</div>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Name</div>
+                            </div>
                             <input type="text" class="form-control" value="<?php echo htmlspecialchars($file['name']) ?>">
                         </div>
                     </div>
                     <div class="form-group col-md-4">
                         <div class="input-group">
-                            <div class="input-group-addon">Size</div>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Size</div>
+                            </div>
                             <input type="text" class="form-control" value="<?php echo htmlspecialchars($file['size']) ?>">
-                            <div class="input-group-addon">Bytes</div>
+                            <div class="input-group-append">
+                                <span class="input-group-text">Bytes</span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
                         <div class="input-group">
-                            <div class="input-group-addon">Type</div>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Type</div>
+                            </div>
                             <input type="text" class="form-control" value="<?php echo htmlspecialchars($file['type']) ?>">
                         </div>
                     </div>
                     <div class="form-group col-md-12">
                         <div class="input-group">
-                            <div class="input-group-addon">SHA256</div>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">SHA256</div>
+                            </div>
                             <input type="text" class="form-control" value="<?php echo htmlspecialchars($sha256) ?>">
                         </div>
                     </div>
