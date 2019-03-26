@@ -1,29 +1,32 @@
 <?php
 namespace core\db;
 
-use core\Util;
-
 class MySQLi extends Database
 {
     private $handle = null;
-    private $dbname = null;
+    private $name = null;
     private $host = null;
     private $user = null;
     private $password = null;
     private $charset = null;
+    private $port = null;
     private $maxAllowedPacket = null;
     private $tmpPlaceHolders = array();
     private $placeHolders = array();
 
-    public function __construct($dbname, $host = 'localhost', $user = null, $password = null, $charset = 'utf8')
+    public function __construct($name, $host = 'localhost', $user = null, $password = null, $port = 3306, $charset = 'utf8')
     {
-        $this->dbname = $dbname;
+        $this->name = $name;
         $this->host = $host;
         $this->user = $user;
         $this->password = $password;
+        $this->port = $port;
         $this->charset = $charset;
     }
 
+    /**
+     * @throws \Exception
+     */
     private function connect()
     {
         if ($this->handle == null) {
@@ -31,7 +34,8 @@ class MySQLi extends Database
                 $this->host,
                 $this->user,
                 $this->password,
-                $this->dbname
+                $this->name,
+                $this->port
             );
 
             if ($this->handle->connect_error) {
@@ -47,6 +51,11 @@ class MySQLi extends Database
         }
     }
 
+    /**
+     * @param $sql
+     * @return bool|\mysqli_stmt
+     * @throws \Exception
+     */
     public function prepare($sql)
     {
         $this->connect();
@@ -71,6 +80,12 @@ class MySQLi extends Database
         return $sth;
     }
 
+    /**
+     * @param $sth
+     * @param array $values
+     * @return mixed
+     * @throws \Exception
+     */
     public function execute($sth, $values = array())
     {
         if (is_array($values) === false) {

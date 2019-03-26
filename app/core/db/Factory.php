@@ -28,14 +28,15 @@ class Factory
             );
         } else if ($config['driver'] == 'mysqli') {
             return new MySQLi(
-                $config['dbname'],
+                $config['name'],
                 $config['host'],
                 $config['user'],
                 $config['password'],
+                $config['port'],
                 $config['charset']
             );
         } else {
-            throw new \Exception('unknown dirver:' . $config['driver']);
+            throw new \Exception('unknown driver:' . $config['driver']);
         }
     }
 
