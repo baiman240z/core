@@ -114,12 +114,12 @@ class Config
 
         $file = null;
         try {
-            $file = self::basedir() . '/config/' . $envPath . $name . '.json';
+            $file = self::basedir() . '/config/' . $envPath . $name . '.yaml';
         } catch (\Exception $ex) {
             die('Configuration error');
         }
         if (file_exists($file)) {
-            self::$configs[$envKey][$name] = json_decode(file_get_contents($file), true);
+            self::$configs[$envKey][$name] = yaml_parse_file($file);
             if (self::$configs[$envKey][$name] == false) {
                 unset(self::$configs[$envKey][$name]);
                 Util::log(

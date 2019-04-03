@@ -13,12 +13,12 @@ class Session
         if (self::$sessionStarted) { return; }
 
         if (Config::get('name', 'session') === null) {
-            throw new \Exception('please set session name on config/session.json');
+            throw new \Exception('please set session name on config/session.yaml');
         }
 
         $driver = Config::get('driver', 'session');
         if ($driver == null) {
-            throw new \Exception('please set session driver on config/session.json');
+            throw new \Exception('please set session driver on config/session.yaml');
         }
 
         if ($driver == 'cookie') {

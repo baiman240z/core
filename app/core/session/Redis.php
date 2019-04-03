@@ -46,7 +46,7 @@ class Redis implements \SessionHandlerInterface
     {
         $this->connect();
         $serialized = $this->redis->get(self::$prefix . $session_id);
-        return strlen($serialized) > 0 ? unserialize($serialized) : null;
+        return strlen($serialized) > 0 ? unserialize($serialized) : '';
     }
 
     public function write($session_id, $session_data)

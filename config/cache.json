@@ -1,8 +1,0 @@
-{
-  "prefix" : "sandboxcore",
-  "redis" : {
-    "host" : "localhost",
-    "port" : 6379
-  },
-  "default" : "redis"
-}

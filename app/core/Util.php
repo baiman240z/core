@@ -79,6 +79,7 @@ class Util
 
         if (is_dir($logDir) == false) {
             @mkdir($logDir, 0777, true);
+            @chmod($logDir, 0777);
         }
 
         $logFile = $logDir . '/' . $logName . '-' . date('d') . '.txt';
