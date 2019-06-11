@@ -16,16 +16,18 @@ use core\Request;
 
 <div class="container">
 
-    <h1>Save form</h1>
+    <h1>Form</h1>
 
-    <form method="post" action="" role="form">
+    <form method="post" action="confirm" role="form">
+        <input type="hidden" name="hoge_id" value="<?php echo htmlspecialchars($form['hoge_id']) ?>">
 
-        <?php echo htmlspecialchars(Util::showMessage('views/parts/message.php')) ?>
+        <?php echo Util::getMessage('success') ?>
+        <?php echo Util::getMessage('error') ?>
 
         <div class="card">
             <div class="card-body">
 
-                <?php if (Request::get('id')) { ?>
+                <?php if ($form['hoge_id']) { ?>
                     <div class="form-group">
                         <label for="enc">id</label>
                         <input type="text" class="form-control" value="<?php echo htmlspecialchars($form['hoge_id']) ?>"
@@ -44,7 +46,7 @@ use core\Request;
                               placeholder="body"><?php echo htmlspecialchars($form['body']) ?></textarea>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-sm btn-primary">save</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Check</button>
                 </div>
             </div>
         </div>

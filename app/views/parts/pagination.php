@@ -8,7 +8,7 @@ unset($params['page']);
 $query = count($params) ? ('&amp;' . http_build_query($params, '', '&amp;')) : '';
 ?>
 
-<div class="pagination-header">
+<div class="mb-2">
     <?php echo $page['total'] ?>件中
     <?php echo $page['start'] ?>件
     ～

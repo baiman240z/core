@@ -15,12 +15,13 @@ use core\Request;
 <div class="container">
 
     <h1>
-        List &amp; Pagination
-        <a class="btn btn-sm btn-success" href="form">add</a>
-        <a class="btn btn-sm btn-warning" href="download">download</a>
+        Database
+        <a class="btn btn-sm btn-success" href="form">Add</a>
+        <a class="btn btn-sm btn-warning" href="download">Download</a>
     </h1>
 
-    <?php echo htmlspecialchars(Util::showMessage('views/parts/message.php')) ?>
+    <?php echo Util::getMessage('success') ?>
+    <?php echo Util::getMessage('error') ?>
 
     <?php include 'views/parts/pagination.php' ?>
 
@@ -28,22 +29,41 @@ use core\Request;
         <tr>
             <th>id</th>
             <th>title</th>
-            <th>created_at</th>
+            <th>updated_at</th>
+            <th></th>
         </tr>
         <?php foreach ($page['rows'] as $row) { ?>
-        <tr>
+        <tr data-id="<?php echo htmlspecialchars($row['hoge_id']) ?>">
             <td><a href="form?id=<?php echo htmlspecialchars($row['hoge_id']) ?>"><?php echo htmlspecialchars($row['hoge_id']) ?></a></td>
             <td><?php echo htmlspecialchars($row['title']) ?></td>
-            <td><?php echo htmlspecialchars($row['created_at']) ?></td>
+            <td><?php echo htmlspecialchars($row['updated_at']) ?></td>
+            <td class="text-center">
+                <button type="button" class="btn btn-sm btn-danger" name="delete-btn">
+                    Delete
+                </button>
+            </td>
         </tr>
         <?php } ?>
     </table>
 
 </div>
 
+<form action="delete" method="post">
+    <input type="hidden" name="id" value="">
+</form>
+
 <?php include 'views/parts/footer.php' ?>
 
 <script>
+    $(function () {
+        $('button[name=delete-btn]').on('click', function () {
+            if (!confirm('are you sure?')) { return false; }
+            var id = $(this).closest('tr').attr('data-id');
+            var form = $('form[action=delete]');
+            form.find('input[name=id]').val(id);
+            form.submit();
+        });
+    });
 </script>
 
 </body>

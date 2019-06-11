@@ -47,9 +47,11 @@ class Mailer
             });
         }
 
-        $this->mailer = new \Swift_Mailer(
-            new \Swift_SmtpTransport($options['host'], $options['port'])
-        );
+        $transport = new \Swift_SmtpTransport($options['host'], $options['port']);
+        if (isset($options['username'])) {
+            $transport->setUsername($options['username'])->setPassword($options['password']);
+        }
+        $this->mailer = new \Swift_Mailer($transport);
 
         $this->message = new \Swift_Message();
         $this->message->setCharset($this->encoding);

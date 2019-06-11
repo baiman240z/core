@@ -14,10 +14,10 @@ use core\Request;
 
 <div class="container">
 
-<h1>List</h1>
+<h1>Cache</h1>
 
-    <?php echo Util::showMessage('error') ?>
-    <?php echo Util::showMessage('success') ?>
+    <?php echo Util::getMessage('error') ?>
+    <?php echo Util::getMessage('success') ?>
 
 <form method="post" action="" role="form">
     <div class="card">
@@ -36,7 +36,7 @@ use core\Request;
                 <input type="text" class="form-control" name="ttl" value="<?php echo htmlspecialchars(Request::post('ttl')) ?>">
             </div>
             <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-sm btn-primary">save</button>
+                <button type="submit" class="btn btn-sm btn-primary">Save</button>
             </div>
         </div>
     </div>

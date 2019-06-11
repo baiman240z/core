@@ -13,45 +13,32 @@ $url = preg_replace('/\?.*$/', '', Request::server('REQUEST_URI'));
     </button>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
+            <li class="nav-item <?php echo preg_match("@/database/@", $url) ? "active" : "" ?>">
+                <a class="nav-link" href="<?php echo Config::baseurl() ?>database/list">
+                    Database
+                </a>
+            </li>
+            <li class="nav-item <?php echo preg_match("@/session/@", $url) ? "active" : "" ?>">
+                <a class="nav-link" href="<?php echo Config::baseurl() ?>session/list">
+                    Session
+                </a>
+            </li>
+            <li class="nav-item <?php echo preg_match("@/cache/@", $url) ? "active" : "" ?>">
+                <a class="nav-link" href="<?php echo Config::baseurl() ?>cache/list">
+                    Cache
+                </a>
+            </li>
+            <li class="nav-item <?php echo preg_match("@/email/@", $url) ? "active" : "" ?>">
+                <a class="nav-link" href="<?php echo Config::baseurl() ?>email/mailer">
+                    e-Mail
+                </a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle <?php echo preg_match("@/form/@", $url) ? "active" : "" ?>" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Form
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="<?php echo Config::baseurl() ?>form/upload">File upload</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle <?php echo preg_match("@/email/@", $url) ? "active" : "" ?>" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    e-Mail
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?php echo Config::baseurl() ?>email/mailer">Mailer</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle <?php echo preg_match("@/database/@", $url) ? "active" : "" ?>" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Database
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?php echo Config::baseurl() ?>database/list">List</a>
-                    <a class="dropdown-item" href="<?php echo Config::baseurl() ?>database/form">Form</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle <?php echo preg_match("@/session/@", $url) ? "active" : "" ?>" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Session
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?php echo Config::baseurl() ?>session/list">List</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle <?php echo preg_match("@/cache/@", $url) ? "active" : "" ?>" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Cache
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?php echo Config::baseurl() ?>cache/list">List</a>
                 </div>
             </li>
         </ul>

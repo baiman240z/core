@@ -131,7 +131,7 @@ class Util
         Session::save('FLASH_MESSAGE', $session);
     }
 
-    public static function showMessage($name)
+    public static function getMessage($name)
     {
         $session = Session::get('FLASH_MESSAGE');
         if (is_array($session)) {
