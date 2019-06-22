@@ -16,8 +16,8 @@ use core\Request;
 
     <h1>
         Database
-        <a class="btn btn-sm btn-success" href="form">Add</a>
-        <a class="btn btn-sm btn-warning" href="download">Download</a>
+        <a class="btn btn-sm btn-success" href="form"><i class="fas fa-plus"></i></a>
+        <a class="btn btn-sm btn-warning" href="download"><i class="fas fa-download"></i></a>
     </h1>
 
     <?php echo Util::getMessage('success') ?>

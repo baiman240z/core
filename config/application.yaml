@@ -1,8 +1,14 @@
 encrypt:
     key: fdb583d3697d6937f57fa667915207ec8f817f08815126e80e3d5e261839c3b4
     iv: 9b4c99239eed80af
+
 smtp:
     host: smtp.mailtrap.io
     port: 2525
     username: 05fd85968f83a2
     password: e525328da81b30
+
+selections:
+    1: Tokyo
+    2: Osaka
+    3: Nagoya
