@@ -121,12 +121,7 @@ class Config
         if (file_exists($file)) {
             self::$configs[$envKey][$name] = yaml_parse_file($file);
             if (self::$configs[$envKey][$name] == false) {
-                unset(self::$configs[$envKey][$name]);
-                Util::log(
-                    'can\'t decode configration file: ' . $file,
-                    'fatal'
-                );
-                return null;
+                die('can\'t decode configration file: ' . $file);
             }
         } else {
             self::$configs[$envKey][$name] = array();
