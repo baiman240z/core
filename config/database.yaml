@@ -1,20 +1,20 @@
 default:
-    driver: pdo
-    dsn: "pgsql:host=localhost;dbname=sandbox;port=5432"
-    user: www
-    password: h0geh0ge
-
-mysqli:
     driver: mysqli
     name: sandbox
-    host: "sandbox.local"
+    host: "sandbox-mysql"
     user: www
     password: h0geh0ge
     port: 3306
     charset: utf8
 
+postgres:
+    driver: pdo
+    dsn: "pgsql:host=sandbox-pgsql;dbname=sandbox;port=5432"
+    user: www
+    password: h0geh0ge
+
 pdo:
     driver: pdo
-    dsn: "mysql:host=sandbox.local;dbname=sandbox;charset=utf8"
+    dsn: "mysql:host=sandbox-mysql;dbname=sandbox;charset=utf8"
     user: www
     password: h0geh0ge
