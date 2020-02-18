@@ -16,8 +16,8 @@ use core\Request;
 
 <h1>Session</h1>
 
-    <?php echo Util::getMessage('error') ?>
-    <?php echo Util::getMessage('success') ?>
+    <?php echo Util::showMessage('error') ?>
+    <?php echo Util::showMessage('success') ?>
 
 <form method="post" action="" role="form">
     <div class="card">

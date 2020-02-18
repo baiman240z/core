@@ -21,8 +21,8 @@ use core\Request;
     <form method="post" action="confirm" role="form">
         <input type="hidden" name="hoge_id" value="<?php echo htmlspecialchars($form['hoge_id']) ?>">
 
-        <?php echo Util::getMessage('success') ?>
-        <?php echo Util::getMessage('error') ?>
+        <?php echo Util::showMessage('success') ?>
+        <?php echo Util::showMessage('error') ?>
 
         <div class="card">
             <div class="card-body">

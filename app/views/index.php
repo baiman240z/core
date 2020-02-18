@@ -15,8 +15,8 @@ use core\Util;
 
     <h1>Top</h1>
 
-    <?php echo Util::getMessage('error') ?>
-    <?php echo Util::getMessage('success') ?>
+    <?php echo Util::showMessage('error') ?>
+    <?php echo Util::showMessage('success') ?>
 
 </div>
 

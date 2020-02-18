@@ -53,21 +53,21 @@ class Config
      */
     public static function baseurl()
     {
+        $host = '';
+        if ($isFull) {
+            $host = Request::server('REQUEST_SCHEME') . '://' . Request::server('HTTP_HOST');
+        }
+
         if (self::$baseurl != null) {
-            return self::$baseurl;
+            return $host . self::$baseurl;
         }
 
         self::$baseurl = self::get('baseurl');
         if (self::$baseurl != null) {
-            return self::$baseurl;
+            return $host . self::$baseurl;
         }
 
-        $public = null;
-        try {
-            $public = self::basedir() . '/public';
-        } catch (\Exception $ex) {
-            die('Configuration error');
-        }
+        $public = self::basedir() . '/public';
         $scriptDir = dirname(Request::server('SCRIPT_FILENAME'));
         $dirs = explode('/', trim($scriptDir, '/'));
 
@@ -76,7 +76,7 @@ class Config
             $current .= '/' . $dir;
             if (fileinode($public) == fileinode($current)) {
                 self::$baseurl = substr($current, strlen(self::docroot())) . '/';
-                return self::$baseurl;
+                return $host . self::$baseurl;
             }
         }
 

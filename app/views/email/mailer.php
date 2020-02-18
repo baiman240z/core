@@ -20,8 +20,8 @@ use core\Request;
 
         <h1>e-Mail</h1>
 
-        <?php echo Util::getMessage('error') ?>
-        <?php echo Util::getMessage('success') ?>
+        <?php echo Util::showMessage('error') ?>
+        <?php echo Util::showMessage('success') ?>
 
         <div class="card">
             <div class="card-body">
