@@ -100,7 +100,7 @@ class Mailer
         $attach = new \Swift_Attachment();
 
         $attach->setBody($data);
-        $attach->setFilename(mb_encode_mimeheader($name));
+        $attach->setFilename(mb_encode_mimeheader($name, 'UTF-8'));
         if ($contentType) {
             $attach->setContentType($contentType);
         }
