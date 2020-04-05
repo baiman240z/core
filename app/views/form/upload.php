@@ -14,11 +14,18 @@
         <div class="card-header">Select</div>
         <div class="card-body">
             <form method="post" enctype="multipart/form-data" action="">
-                <input type="file" name="file" hidden>
-                <div class="center">
-                    <span id="filename" class="text-info"></span>
-                    <button type="button" class="btn btn-info btn-sm" name="file-btn"><i class="far fa-file"></i> File</button>
-                    <button type="submit" class="btn btn-primary btn-sm ml-3"><i class="fas fa-upload"></i> upload</button>
+                <div class="row">
+                    <div class="col">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="file">
+                            <label class="custom-file-label" for="customFile" id="filename">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="center">
+                            <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-upload"></i> upload</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -29,7 +36,7 @@
             <div class="card-header">File</div>
             <div class="card-body">
                 <div class="row">
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-4">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Name</div>
@@ -48,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-4">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Type</div>
@@ -78,12 +85,8 @@
         $('input[name=file]').on('change', function()
         {
             if (this.files.length > 0) {
-                $('#filename').text(this.files[0].name + ':');
+                $('#filename').text(this.files[0].name);
             }
-        });
-
-        $('button[name=file-btn]').on('click', function() {
-            $('input[name=file]').trigger('click');
         });
     });
 </script>
