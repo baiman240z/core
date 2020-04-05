@@ -51,7 +51,7 @@ class Config
      * @return string
      * @throws \Exception
      */
-    public static function baseurl()
+    public static function baseurl($isFull = false)
     {
         $host = '';
         if ($isFull) {
@@ -85,8 +85,8 @@ class Config
 
     public static function environment()
     {
-        if (isset($_SERVER['PHP_ENV']) && $_SERVER['PHP_ENV'] != null) {
-            return strtolower($_SERVER['PHP_ENV']);
+        if (getenv('PHP_ENV')) {
+            return strtolower(getenv('PHP_ENV'));
         } else {
             return 'production';
         }
