@@ -1,5 +1,6 @@
 $(function () {
+    $('[data-toggle=tooltip]').tooltip();
     $('.toast').toast({
-        delay: 3000
+        delay: 10000
     }).toast('show');
 });

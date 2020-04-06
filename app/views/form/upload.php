@@ -23,7 +23,7 @@
                     </div>
                     <div class="col">
                         <div class="center">
-                            <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-upload"></i> upload</button>
+                            <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Upload"><i class="fas fa-upload"></i></button>
                         </div>
                     </div>
                 </div>

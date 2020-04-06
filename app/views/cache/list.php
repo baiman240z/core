@@ -33,7 +33,9 @@ use core\Request;
                 <input type="text" class="form-control" name="ttl" value="<?php echo htmlspecialchars(Request::post('ttl')) ?>">
             </div>
             <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-sm btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Save">
+                    <i class="fas fa-save"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -47,7 +49,7 @@ use core\Request;
             <ul class="list-group">
                 <?php foreach ($caches as $key => $cache) { ?>
                 <li class="list-group-item" data-key="<?php echo htmlspecialchars($key) ?>">
-                        <button type="button" class="btn btn-sm btn-danger" name="delete-btn">
+                        <button type="button" class="btn btn-sm btn-danger" name="delete-btn" data-toggle="tooltip" title="Delete">
                             <i class="far fa-trash-alt"></i>
                         </button>
                         <?php echo htmlspecialchars($key) ?>

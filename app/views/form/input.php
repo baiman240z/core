@@ -59,7 +59,9 @@ $selections = Config::get('selections')
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-sm btn-primary">Check</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </div>
             </form>
         </div>

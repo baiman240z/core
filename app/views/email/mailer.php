@@ -44,7 +44,9 @@ use core\Request;
                               placeholder="本文"><?php echo htmlspecialchars(Request::post('body')) ?></textarea>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-sm btn-primary">Send</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </div>
 
             </div>

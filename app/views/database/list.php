@@ -16,8 +16,6 @@ use core\Request;
 
     <h1>
         Database
-        <a class="btn btn-sm btn-success" href="form"><i class="fas fa-plus"></i></a>
-        <a class="btn btn-sm btn-warning" href="download"><i class="fas fa-download"></i></a>
     </h1>
 
     <?php include 'views/parts/pagination.php' ?>
@@ -35,18 +33,25 @@ use core\Request;
             <td><?php echo htmlspecialchars($row['title']) ?></td>
             <td><?php echo htmlspecialchars($row['updated_at']) ?></td>
             <td class="text-center">
-                <button type="button" class="btn btn-sm btn-danger" name="delete-btn">
-                    Delete
+                <button type="button" class="btn btn-sm btn-danger" name="delete-btn" data-toggle="tooltip" title="Delete">
+                    <i class="fas fa-trash-alt"></i>
                 </button>
             </td>
         </tr>
         <?php } ?>
     </table>
+
+    <a class="btn btn-warning" data-toggle="tooltip" title="Download" href="download"><i class="fas fa-download"></i></a>
+
 </div>
 
 <form action="delete" method="post">
     <input type="hidden" name="id" value="">
 </form>
+
+<div class="fixed-action-btn">
+    <a href="form" class="btn-floating shadow" data-toggle="tooltip" title="Add"><i class="fas fa-plus"></i></a>
+</div>
 
 <?php include 'views/parts/footer.php' ?>
 

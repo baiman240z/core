@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 /* line 3, public/css/base.scss */
+/* line 3, public/css/base.css */
 footer {
   color: #999999;
   background-color: #eeeeee;
@@ -8,12 +9,45 @@ footer {
   margin-top: 20px; }
 
 /* line 11, public/css/base.scss */
+/* line 11, public/css/base.css */
 .toast-messages {
   position: fixed;
   top: 20px;
   right: 20px; }
-  /* line 15, public/css/base.scss */
-  .toast-messages .toast {
-    min-width: 200px; }
+
+/* line 15, public/css/base.scss */
+/* line 16, public/css/base.css */
+.toast-messages .toast {
+  min-width: 200px; }
+
+/* line 20, public/css/base.scss */
+/* line 20, public/css/base.css */
+.fixed-action-btn {
+  position: fixed;
+  right: 23px;
+  bottom: 23px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 997; }
+
+/* line 29, public/css/base.scss */
+/* line 29, public/css/base.css */
+.btn-floating {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  vertical-align: middle;
+  color: white;
+  padding-top: 15px;
+  background-color: #ed4149;
+  border-radius: 50%;
+  text-align: center; }
+
+/* line 39, public/css/base.scss */
+/* line 40, public/css/base.css */
+.btn-floating:hover {
+  color: white; }
+
+/*# sourceMappingURL=base.css.map */
 
 /*# sourceMappingURL=base.css.map */

@@ -60,8 +60,10 @@ $selections = Config::get('selections')
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="button" class="btn btn-sm btn-warning" name="back-btn">Back</button>
-                    <button type="submit" class="btn btn-sm btn-primary">OK</button>
+                    <button type="button" class="btn btn-warning" name="back-btn">Back</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Save">
+                        <i class="fas fa-save"></i>
+                    </button>
                 </div>
             </form>
         </div>
