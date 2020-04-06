@@ -20,9 +20,6 @@ use core\Request;
         <a class="btn btn-sm btn-warning" href="download"><i class="fas fa-download"></i></a>
     </h1>
 
-    <?php echo Util::showMessage('success') ?>
-    <?php echo Util::showMessage('error') ?>
-
     <?php include 'views/parts/pagination.php' ?>
 
     <table class="table table-striped table-bordered">
@@ -45,7 +42,6 @@ use core\Request;
         </tr>
         <?php } ?>
     </table>
-
 </div>
 
 <form action="delete" method="post">

@@ -1,22 +1,19 @@
 @CHARSET "UTF-8";
-
-body {
-    font-family:
-        "メイリオ",
-        "Meiryo",
-        verdana,
-        "ヒラギノ角ゴ Pro W3",
-        "Hiragino Kaku Gothic Pro",
-        Osaka,
-        "ＭＳ Ｐゴシック",
-        "MS PGothic",Sans-Serif
-    !important;
-}
-
+/* line 3, public/css/base.scss */
 footer {
-    color: #999999;
-    background-color: #eeeeee;
-    line-height: 40px;
-    text-align: center;
-    margin-top: 20px;
-}
+  color: #999999;
+  background-color: #eeeeee;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 20px; }
+
+/* line 11, public/css/base.scss */
+.toast-messages {
+  position: fixed;
+  top: 20px;
+  right: 20px; }
+  /* line 15, public/css/base.scss */
+  .toast-messages .toast {
+    min-width: 200px; }
+
+/*# sourceMappingURL=base.css.map */

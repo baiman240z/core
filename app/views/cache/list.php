@@ -16,9 +16,6 @@ use core\Request;
 
 <h1>Cache</h1>
 
-    <?php echo Util::showMessage('error') ?>
-    <?php echo Util::showMessage('success') ?>
-
 <form method="post" action="" role="form">
     <div class="card">
         <div class="card-header">cache</div>

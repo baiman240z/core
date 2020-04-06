@@ -1,4 +1,6 @@
+/node_modules/
 /vendor/
 /log/
-composer.lock
 /.idea/
+/composer.lock
+/package-lock.json

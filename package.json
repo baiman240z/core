@@ -4,7 +4,7 @@
   "description": "![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)",
   "main": "index.js",
   "scripts": {
-    "serve": "php -S localhost:8000 -t public/ router.php"
+    "watch-sass": "node-sass -w public/css/ -o public/css/ --source-map true --source-comments"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/baiman240z/core/issues"
   },
-  "homepage": "https://github.com/baiman240z/core#readme"
+  "homepage": "https://github.com/baiman240z/core#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
 }
